@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiệu chỉnh theo sự kiện chuột</title>
+</head>
+<body>
+  <div id="box" onmouseover="doiChu()" onmouseout="traChu()"
+       style="width:160px; padding:15px; background:#ddd; text-align:center; cursor:pointer;">
+    Hover Me
+  </div>
+  <br>
+
+  <img id="anh" src="https://via.placeholder.com/150" width="150"
+       onmouseover="phongTo()" onmouseout="thuNho()" alt="Demo">
+  <br><br>
+
+  <button onclick="hienNgayGio()">Xem ngày giờ hiện tại</button>
+  <br><br>
+
+  <input type="text" id="txtInput" placeholder="Nhập chữ thường..." onkeyup="inHoa()">
+
+  <script>
+    function doiChu() {
+      document.getElementById("box").innerText = "Mouse Event";
+    }
+    function traChu() {
+      document.getElementById("box").innerText = "Hover Me";
+    }
+    function phongTo() {
+      document.getElementById("anh").style.width = "165px";
+    }
+    function thuNho() {
+      document.getElementById("anh").style.width = "150px";
+    }
+    function hienNgayGio() {
+      alert("Ngày giờ hiện tại: " + new Date().toLocaleString("vi-VN"));
+    }
+    function inHoa() {
+      let oNhap = document.getElementById("txtInput");
+      oNhap.value = oNhap.value.toUpperCase();
+    }
+  </script>
+</body>
+</html>
